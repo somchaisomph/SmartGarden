@@ -5,9 +5,9 @@ from PIL import Image
 from io import BytesIO
 import zlib
 
-key = 'xxxxxxxx'
-secret = 'xxxxxxxxxxx'
-app = 'N3AFarm01'
+key = '<your key>'
+secret = '<your secret key>'
+app = 'your application name>'
 
 netpie.create(key,secret,app,{'debugmode': True})
 connected = False
@@ -46,7 +46,6 @@ def encode_base64(img_data):
  try:
   #compress it first.
   compressed_data = zlib.compress(img_data.getvalue(),9)
-  
   #encode it to base64 string
   encoded = base64.b64encode(compressed_data)  
  except:
@@ -70,8 +69,6 @@ def decode_base64(compressed_b64str=None,save_to_file=None):
    image.show()
  except:
   pass   
-
-
 
 
 this_name = 'n3a1'     
